@@ -30,7 +30,18 @@ function promptUser() {
         type: "list",
         message: "What licenses are needed for your application?",
         name: "license",
-        choices: [1, 2, 3],
+        choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"],
+    },
+    
+    {
+        type: "input",
+        message: "What command should be run to run tests?",
+        name: "command",
+    },
+    {
+        type: "input",
+        message: "What are the instructions for contributing to this project?",
+        name: "contribute"
     },
     {
         type: "input",
@@ -49,21 +60,45 @@ function promptUser() {
 function generateReadMe (answers) {
     return `
     Title: ${answers.title}
+
     Description: ${answers.description}
+
     Table of Contents:
         Installation
         Licenses
-        Description
-        Instructions
-    email: ${answers.email}
+        Usage
+        Contributing
+
+    ## Installation
+    Installation instructions: ${answers.installation}
+
+    ##Licenses
+    Licenses Required: ${answers.license}
+
+    ##Usage
+    Usage: ${answers.usage}
+
+    ##Contributions
+    Contributing Instruction: ${answers.contribute}
+
+    ##Command Line Instructions
+    Command Line Instructions to run application: ${answers.command}
+
+    ##Email
+    Email: ${answers.email}
+
+    ##Github
     Github: https://github.com/${answers.github}
+
+    ##Questions
+    Questions: Please contact me at ${answers.email} with the subject line "ReadMe Questions" with further questions!
     `
 }
 
 promptUser()
     .then(function(answers) {
         const readme = generateReadMe (answers)
-        return writeFileAysnc("log.md", readme)
+        return writeFileAysnc(`${answers.title}.md`, readme)
     })
     .then(function(){
         console.log("Success!")
