@@ -64,33 +64,31 @@ function generateReadMe (answers) {
     Description: ${answers.description}
 
     Table of Contents:
-        Installation
-        Licenses
-        Usage
-        Contributing
+        Installation (#installation)
+        Licenses (#licenses)
+        Usage (#usage)
+        Contributing (#contributions)
 
-    ## Installation
+    ### Installation
     Installation instructions: ${answers.installation}
 
-    ##Licenses
-    Licenses Required: ${answers.license}
+    ### Licenses
+    This application is covered under the license: ${answers.license}
 
-    ##Usage
+    ### Usage
     Usage: ${answers.usage}
 
-    ##Contributions
+    ### Contributions
     Contributing Instruction: ${answers.contribute}
 
-    ##Command Line Instructions
-    Command Line Instructions to run application: ${answers.command}
+    ### Command Line Instructions
+    Command Line Instructions to run application: 
+    ${answers.command}
 
-    ##Email
-    Email: ${answers.email}
-
-    ##Github
+    ### Github
     Github: https://github.com/${answers.github}
 
-    ##Questions
+    ### Questions
     Questions: Please contact me at ${answers.email} with the subject line "ReadMe Questions" with further questions!
     `
 }
