@@ -40,8 +40,13 @@ function promptUser() {
     },
     {
         type: "input",
-        message: "What are the instructions for contributing to this project?",
+        message: "What are the guidelines for contributing to this project?",
         name: "contribute"
+    },
+    {
+        type: "input",
+        message: "What are the instructions for testing this project?",
+        name: "testing"
     },
     {
         type: "input",
@@ -59,36 +64,41 @@ function promptUser() {
 
 function generateReadMe (answers) {
     return `
-    Title: ${answers.title}
+Title: ${answers.title}
 
-    Description: ${answers.description}
+Description: ${answers.description}
 
-    Table of Contents:
-        Installation (#installation)
-        Licenses (#licenses)
-        Usage (#usage)
-        Contributing (#contributions)
+Table of Contents:
+    [Installation](#Installation)
+    [Licenses](#Licenses)
+    [Usage](#Usage)
+    [Contributing](#Contributions)
+    [Commands](#Command Line Instructions)
+    [Testing](#Testing)
 
-    ### Installation
+# Installation
     Installation instructions: ${answers.installation}
 
-    ### Licenses
+# Licenses
     This application is covered under the license: ${answers.license}
 
-    ### Usage
+# Usage
     Usage: ${answers.usage}
 
-    ### Contributions
-    Contributing Instruction: ${answers.contribute}
+# Contributions
+    Contributing Guidelines: ${answers.contribute}
 
-    ### Command Line Instructions
+# Command Line Instructions
     Command Line Instructions to run application: 
     ${answers.command}
 
-    ### Github
+# Testing
+    Instructions to test this application: ${answers.testing}
+
+# Github
     Github: https://github.com/${answers.github}
 
-    ### Questions
+# Questions
     Questions: Please contact me at ${answers.email} with the subject line "ReadMe Questions" with further questions!
     `
 }
