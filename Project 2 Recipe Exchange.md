@@ -35,4 +35,8 @@ Table of Contents:
 
 # Questions
     Questions: Please contact me at cmaffei720@gmail.com with the subject line "ReadMe Questions" with further questions!
+
+# Video
+    Link to the video creating this is below!
+    https://www.loom.com/share/2139abd9ffb04ca1a0a07aa379d789c4
     
